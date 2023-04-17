@@ -25,7 +25,7 @@
   "searchTags": [],
   "dist": {
     "basePath": "dist",
-    "files": ["webcomp-boilerplate.min.js"],
+    "files": ["webcomp-website-stats.min.js"],
     "scripts": []
   },
   "configuration": {

@@ -1,17 +1,17 @@
 
-# Webcomponent Boilerplate
+# Webcomponent website-stats
 
-The webcomponent Boilerplate is the start to your project, and it contains a hello-world webcomp to show you how a basic one works and to give you a little help to start your amazing new webcomponent!
+The webcomponent website-stats is the start to your project, and it contains a hello-world webcomp to show you how a basic one works and to give you a little help to start your amazing new webcomponent!
 This guide will aid you in the process of creating a valid web-component that has all the requisites necessary to be uploaded on the Open Data Hub Store.<br>
-To encourage you and support you in the process of contributing to the store we created a playlist of videos that explain each step, from start to finish.We will talk about starting from the boilerplate, what the files inside it do, how you have to use webpack and docker for your development process, and finally how to publish it on the ODH Web component store. <br>
+To encourage you and support you in the process of contributing to the store we created a playlist of videos that explain each step, from start to finish.We will talk about starting from the website-stats, what the files inside it do, how you have to use webpack and docker for your development process, and finally how to publish it on the ODH Web component store. <br>
 [The complete guide in one video](https://vimeo.com/735835086)
 
 
 **Table of Contents**
-- [Webcomponent Boilerplate](#webcomponent-boilerplate)
+- [Webcomponent website-stats](#webcomponent-website-stats)
 - [Create](#create)
   - [Prerequisites](#prerequisites)
-  - [Start from the web-component boilerplate](#start-from-the-web-component-boilerplate)
+  - [Start from the web-component website-stats](#start-from-the-web-component-website-stats)
   - [Modify the file wcs-manifest.json](#modify-the-file-wcs-manifestjson)
   - [Create in SRC folder](#create-in-src-folder)
 - [Test the webcomponent](#test-the-webcomponent)
@@ -39,14 +39,14 @@ To build the project, the following must have been installed in your local machi
 - Node 12/ NPM 6
 - Docker
 
-## Start from the web-component boilerplate
-[Video guide: Start from the boilerplate](https://vimeo.com/734001070)
-You'll have to start from the boilerplate made available by the NOI Techpark on GitHub [here](https://github.com/noi-techpark/webcomp-boilerplate).
+## Start from the web-component website-stats
+[Video guide: Start from the website-stats](https://vimeo.com/734001070)
+You'll have to start from the website-stats made available by the NOI Techpark on GitHub [here](https://github.com/noi-techpark/webcomp-website-stats).
 Before beginning check out how to contribute to NOI [here](https://github.com/noi-techpark/odh-docs/wiki/Contributor-Guidelines:-Getting-started).
 - Fork the repository
 - Then ask the customer care ([help@opendatahub.com](mailto:help@opendatahub.com)) for a repository for your project, that will be the repository to which you'll make the pull request to.
 
-In the boilerplate it's integrated an hello world webcomponent ready to use. If you have the prerequisites installed to run the hello world you'll have to just use these three commands in the powershell terminal:
+In the website-stats it's integrated an hello world webcomponent ready to use. If you have the prerequisites installed to run the hello world you'll have to just use these three commands in the powershell terminal:
 - `npm install`
 - `npm run build`
 - `cp .env.example .env`
@@ -206,7 +206,7 @@ Test the wcs-manifest.json with the online test tool [Validator](https://webcomp
 ## Create in SRC folder
 [Video guide: Hello World](https://vimeo.com/734000899)<br>
 In the SRC folder you should create all the js files necessary for your webcomponent.
-Our is a simple Hello World made using vanilla JS and HTMLElement, that you can find in this boilerplate.
+Our is a simple Hello World made using vanilla JS and HTMLElement, that you can find in this website-stats.
 
 
  <details>
@@ -288,7 +288,7 @@ To test the webcomponent you use Webpack and Docker. If you started with the dep
 [Video guide: What is Webpack?](https://vimeo.com/734001174) <br>
 Webpack is used to compile JavaScript modules. [Here](https://webpack.js.org/guides/getting-started/) you can find more information.<br>
 It is necessary to use it because in the manifest json you should use just one JS file with also assets like css, images and fonts bundled into it.<br>
-After deploying the boilerplate the webcomponent files in the SRC will be bundled inside a dist folder
+After deploying the website-stats the webcomponent files in the SRC will be bundled inside a dist folder
 
 ### Basic Setup
  - initialize npm<br>
@@ -315,7 +315,7 @@ module.exports = {
   mode: 'production',
   entry: './src/index.js', //your js file that will be bundles
   output: {
-    filename: 'webcomp-boilerplate.min.js', // the bundled file - the file name you should also put in the manifest.json
+    filename: 'webcomp-website-stats.min.js', // the bundled file - the file name you should also put in the manifest.json
     path: path.resolve(__dirname, 'dist'),
   },
 };
@@ -331,7 +331,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js', //your js file that will be bundles
   output: {
-    filename: 'webcomp-boilerplate.js', //this will be only saved in the memory, usufull for testing
+    filename: 'webcomp-website-stats.js', //this will be only saved in the memory, usufull for testing
     clean: true
   },
   devServer: {            //the server were the file will be processed
@@ -344,7 +344,7 @@ module.exports = {
  ```
 
 ### Modify the Package.json
-In the Package.json it is important to have installed Webpack inside the Dependencies - but that was already done when you followeed the instruction to deploy the boilerplate, or you can consult the basic setup above.<br>
+In the Package.json it is important to have installed Webpack inside the Dependencies - but that was already done when you followeed the instruction to deploy the website-stats, or you can consult the basic setup above.<br>
 Given it's not particularly fun to run a local copy of webpack from the CLI, we can set up a little shortcut we made two scripts commands.<br>
 
 - The `npm run build` will bundle the file and then compress it to a non human readable form and the output will be the file inside the dist folder.
@@ -407,7 +407,7 @@ For accessing the webcomponent in a separated docker in the browser you will nee
 # Last Steps
 [Video guide: How to publish your webcomponent](https://vimeo.com/734001003) <br>
 - Delete the containers of the ODH store in the `docker-compose.yml` file (every container except `app`- the first one)
-- Modify the `README.example.md` to create the README file of your webcomp and then delete the one of the Boilerplate.
+- Modify the `README.example.md` to create the README file of your webcomp and then delete the one of the website-stats.
 
 # Final requirements for submission
 - One single js file

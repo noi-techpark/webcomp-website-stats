@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: 'webcomp-boilerplate.js',
+    filename: 'webcomp-website-stats.js',
     clean: true
   },
   devServer: {
