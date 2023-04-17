@@ -1,10 +1,10 @@
 {
-  "title": "Hello-world",
-  "shortName": "hello-world-2",
-  "description": "Hello world simple webcomp example",
-  "descriptionAbstract": "Hello world simple webcomp example",
+  "title": "noi.bz.it website stats",
+  "shortName": "noi-stats",
+  "description": "Show website visit statistics",
+  "descriptionAbstract": "Showing statistics about the visits of the 'Amministrazione Trasparente/Transaprente Verwaltung' pages of the noi.bz.it website: noi.bz.it/de/transparente-verwaltung and noi.bz.it/it/amministrazione-trasparente",
   "license": "AGPL-3.0-or-later",
-  "repositoryUrl": "https://your-repository.git",
+  "repositoryUrl": "https://github.com/noi-techpark/webcomp-website-stats",
   "copyrightHolders": [
     {
       "name": "NOI",
@@ -15,34 +15,21 @@
   ],
   "authors": [
     {
-      "name": "...",
-      "email": "...",
-      "organization": "...",
-      "organizationUrl": "..."
+      "name": "Simon Dalvai",
+      "email": "s.dalvai@noi.bz.it",
+      "organization": "NOI S.p.A",
+      "organizationUrl": "https://noi.bz.it"
     }
   ],
   "image": "wcs-logo.png",
   "searchTags": [],
   "dist": {
     "basePath": "dist",
-    "files": [
-      "webcomp-boilerplate.min.js"
-    ],
-    "scripts": [
-    ]
+    "files": ["webcomp-boilerplate.min.js"],
+    "scripts": []
   },
   "configuration": {
-    "tagName": "hello-world",
-    "options": [
-      {
-        "key": "title",
-        "type": "text",
-        "label": "title of the web-comp",
-        "required": false,
-        "options": {
-          "default": "hello-world"
-        }
-      }
-    ]
+    "tagName": "website-stats",
+    "options": []
   }
 }
