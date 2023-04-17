@@ -1,8 +1,8 @@
 {
   "title": "noi.bz.it website stats",
   "shortName": "noi-stats",
-  "description": "Show website visit statistics",
-  "descriptionAbstract": "Showing statistics about the visits of the 'Amministrazione Trasparente/Transaprente Verwaltung' pages of the noi.bz.it website: noi.bz.it/de/transparente-verwaltung and noi.bz.it/it/amministrazione-trasparente",
+  "description": "Showing statistics about the visits of the 'Amministrazione Trasparente/Transaprente Verwaltung' pages of the noi.bz.it website: noi.bz.it/de/transparente-verwaltung and noi.bz.it/it/amministrazione-trasparente",
+  "descriptionAbstract": "Show website visit statistics",
   "license": "AGPL-3.0-or-later",
   "repositoryUrl": "https://github.com/noi-techpark/webcomp-website-stats.git",
   "copyrightHolders": [
