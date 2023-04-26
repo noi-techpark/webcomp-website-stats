@@ -43,7 +43,7 @@
       {
         "key": "websites",
         "type": "text",
-        "label": "The websites of which the data will be shown. Separate multiple website with a comma",
+        "label": "The websites of which the data will be shown. Separate multiple website with a comma. If multiple websites are defined, the sum of all values is shown",
         "required": false,
         "options": {
           "default": "noi.bz.it/it/amministrazione-trasparente, noi.bz.it/de/transparente-verwaltung"
