@@ -15,7 +15,13 @@ class WebsiteStats extends HTMLElement {
     get visits() {
         // return this.getAttribute("title");
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "https://mobility.api.opendatahub.testingmachine.eu/v2/flat%2Cnode/Website/yearlyVisits/latest?limit=200&offset=0&shownull=false&distinct=true&timezone=UTC", false)
+        const filterStations = ['noi.bz.it/it/amministrazione-trasparente', 'noi.bz.it/de/transparente-verwaltung'];
+        const searchString = "scode.in.(" + filterStations 
+            .map(e => `"${encodeURIComponent(e)}"`)
+            .join(',')
+            + ")";
+        console.log(searchString);
+        xhttp.open("GET", "https://mobility.api.opendatahub.testingmachine.eu/v2/flat%2Cnode/Website/yearlyVisits/latest?limit=200&offset=0&shownull=false&distinct=true&timezone=UTC&where=" + searchString, false)
         xhttp.send();
         let json = JSON.parse(xhttp.response);
         console.log(json);
