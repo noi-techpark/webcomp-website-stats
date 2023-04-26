@@ -29,7 +29,7 @@ class WebsiteStats extends HTMLElement {
 
     get websites() {
         let configWebsites = this.getAttribute("websites");
-        configWebsites = configWebsites.trim().split(",");
+        configWebsites = configWebsites.replace(/\s/g, "").split(",");
         return configWebsites == null ? ['noi.bz.it/it/amministrazione-trasparente', 'noi.bz.it/de/transparente-verwaltung'] : configWebsites;
     }
 
@@ -41,7 +41,6 @@ class WebsiteStats extends HTMLElement {
             .map(e => `"${encodeURIComponent(e)}"`)
             .join(',')
             + ")";
-        console.log(searchString);
         xhttp.open("GET", `${api}/v2/flat%2Cnode/Website/${this.period}/latest?limit=200&offset=0&shownull=false&distinct=true&timezone=UTC&where=${searchString}`, false)
         xhttp.send();
         const json = JSON.parse(xhttp.response);
