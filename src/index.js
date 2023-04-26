@@ -15,7 +15,7 @@ class WebsiteStats extends HTMLElement {
     get visits() {
         // return this.getAttribute("title");
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "https://mobility.api.opendatahub.testingmachine.eu/v2/flat%2Cnode/Website/%2A/latest?limit=200&offset=0&shownull=false&distinct=true&timezone=UTC", false)
+        xhttp.open("GET", "https://mobility.api.opendatahub.testingmachine.eu/v2/flat%2Cnode/Website/yearlyVisits/latest?limit=200&offset=0&shownull=false&distinct=true&timezone=UTC", false)
         xhttp.send();
         let json = JSON.parse(xhttp.response);
         console.log(json);
