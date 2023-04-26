@@ -30,6 +30,50 @@
   },
   "configuration": {
     "tagName": "website-stats",
-    "options": []
+    "options": [
+      {
+        "key": "text",
+        "type": "text",
+        "label": "Text that will appear left to the value",
+        "required": false,
+        "options": {
+          "default": "Website statistics"
+        }
+      },
+      {
+        "key": "websites",
+        "type": "text",
+        "label": "The websites of which the data will be shown. Separate multiple website with a comma",
+        "required": false,
+        "options": {
+          "default": "noi.bz.it/it/amministrazione-trasparente, noi.bz.it/de/transparente-verwaltung"
+        }
+      },
+      {
+        "key": "period",
+        "type": "select",
+        "label": "Time frame of the statistics",
+        "required": false,
+        "options": {
+          "values": [
+            "dailyVisits",
+            "weeklyVisits",
+            "monthlyVisits",
+            "yearlyVisits"
+          ],
+          "default": "yearlyVisits"
+        }
+      },
+      {
+        "key": "fontSize",
+        "type": "number",
+        "label": "Size of the font in px",
+        "required": false,
+        "options": {
+          "default": 24
+        }
+      }
+
+    ]
   }
 }

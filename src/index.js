@@ -12,20 +12,45 @@ class WebsiteStats extends HTMLElement {
         );
     }
 
+    get fontSize() {
+        const configFontSize = this.getAttribute("fontSize");
+        return configFontSize == null ? 24 : Number(configFontSize);
+    }
+
+    get text() {
+        const configText = this.getAttribute("text");
+        return configText == null ? "" : configText;
+    }
+
+    get period() {
+        const configPeriod = this.getAttribute("period");
+        return configPeriod == null ? "yearlyVisits" : configPeriod;
+    }
+
+    get websites() {
+        let configWebsites = this.getAttribute("websites");
+        configWebsites = configWebsites.trim().split(",");
+        return configWebsites == null ? ['noi.bz.it/it/amministrazione-trasparente', 'noi.bz.it/de/transparente-verwaltung'] : configWebsites;
+    }
+
     get visits() {
-        // return this.getAttribute("title");
-        var xhttp = new XMLHttpRequest();
-        const filterStations = ['noi.bz.it/it/amministrazione-trasparente', 'noi.bz.it/de/transparente-verwaltung'];
-        const searchString = "scode.in.(" + filterStations 
+        const api = "https://mobility.api.opendatahub.testingmachine.eu";
+
+        const xhttp = new XMLHttpRequest();
+        const searchString = "scode.in.(" + this.websites
             .map(e => `"${encodeURIComponent(e)}"`)
             .join(',')
             + ")";
         console.log(searchString);
-        xhttp.open("GET", "https://mobility.api.opendatahub.testingmachine.eu/v2/flat%2Cnode/Website/yearlyVisits/latest?limit=200&offset=0&shownull=false&distinct=true&timezone=UTC&where=" + searchString, false)
+        xhttp.open("GET", `${api}/v2/flat%2Cnode/Website/${this.period}/latest?limit=200&offset=0&shownull=false&distinct=true&timezone=UTC&where=${searchString}`, false)
         xhttp.send();
-        let json = JSON.parse(xhttp.response);
-        console.log(json);
-        return json.data[0].scode.split("/")[1].toUpperCase() + " " + json.data[0].mvalue + " - " + json.data[1].scode.split("/")[1].toUpperCase() + " " + json.data[1].mvalue;
+        const json = JSON.parse(xhttp.response);
+
+        let value = 0;
+        for (let data of json.data)
+            value += data.mvalue;
+
+        return value;
     }
 
     connectedCallback() {
@@ -37,12 +62,12 @@ class WebsiteStats extends HTMLElement {
             <style>
                 h1 {
                     color: black;
-                    font-size: 34px;
+                    font-size: ${this.fontSize}px;
                     font-family: 'Source Sans Pro',sans-serif;
                 }
             </style>
             <h1>
-                ${this.visits}
+            ${this.text} ${this.visits}
             </h1>
         `;
     }
