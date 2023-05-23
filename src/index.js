@@ -34,14 +34,14 @@ class WebsiteStats extends HTMLElement {
     }
 
     get visits() {
-        const api = "https://mobility.api.opendatahub.testingmachine.eu";
+        const api = "https://mobility.api.opendatahub.com";
 
         const xhttp = new XMLHttpRequest();
         const searchString = "scode.in.(" + this.websites
             .map(e => `"${encodeURIComponent(e)}"`)
             .join(',')
             + ")";
-        xhttp.open("GET", `${api}/v2/flat%2Cnode/Website/${this.period}/latest?limit=200&offset=0&shownull=false&distinct=true&timezone=UTC&where=${searchString}`, false)
+        xhttp.open("GET", `${api}/v2/flat%2Cnode/WebStatistics/${this.period}/latest?limit=200&offset=0&shownull=false&distinct=true&timezone=UTC&where=${searchString}&origin=webcomp-website-stats`, false)
         xhttp.send();
         const json = JSON.parse(xhttp.response);
 
