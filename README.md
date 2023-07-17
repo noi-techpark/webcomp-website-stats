@@ -6,7 +6,7 @@ SPDX-License-Identifier: CC0-1.0
 
 # Webcomponent website-stats
 
-![REUSE Compliance](https://github.com/noi-techpark/webcomp-website-stats/actions/workflows/reuse.yml/badge.svg)
+[![REUSE Compliance](https://github.com/noi-techpark/webcomp-website-stats/actions/workflows/reuse.yml/badge.svg)](https://github.com/noi-techpark/odh-docs/wiki/REUSE#badges)
 
 The webcomponent website-stats is the start to your project, and it contains a hello-world webcomp to show you how a basic one works and to give you a little help to start your amazing new webcomponent!
 This guide will aid you in the process of creating a valid web-component that has all the requisites necessary to be uploaded on the Open Data Hub Store.<br>
