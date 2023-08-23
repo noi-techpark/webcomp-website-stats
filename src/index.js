@@ -33,7 +33,7 @@ class WebsiteStats extends HTMLElement {
     get websites() {
         let configWebsites = this.getAttribute("websites");
         configWebsites = configWebsites.replace(/\s/g, "").split(",");
-        return configWebsites == null ? ['noi.bz.it/it/amministrazione-trasparente', 'noi.bz.it/de/transparente-verwaltung'] : configWebsites;
+        return configWebsites == null ? ['noi.bz.it/de/ueber-uns/transparente-verwaltung', 'noi.bz.it/it/chi-siamo/societa-trasparente', 'noi.bz.it/it/amministrazione-trasparente', 'noi.bz.it/de/transparente-verwaltung'] : configWebsites;
     }
 
     get visits() {
